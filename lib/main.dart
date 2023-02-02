@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 void main(){
-  runApp(App());
+  runApp(const App());
 }
 
 class App extends StatelessWidget {
