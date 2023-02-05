@@ -1,4 +1,3 @@
-import 'package:amazon_clone/modules/signin/view/signin_page.dart';
 import 'package:amazon_clone/modules/splash/view/splash_screen.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get_navigation/get_navigation.dart';
@@ -12,7 +11,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return const GetMaterialApp(
       home: SplashScreen(),
     );
   }

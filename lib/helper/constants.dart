@@ -1,5 +1,11 @@
+import 'package:amazon_clone/helper/config.dart';
+
 class Constants {
-  static const String signinUrl = "http://10.0.2.2:8080/signin";
+  // signin
+  static const String signinUrl = "${Config.baseUrl}/signin";
   static const String signInUsernameKey = "username";
   static const String signInPasswordKey = "password";
+
+  // products
+  static const String getProductsUrl = "${Config.baseUrl}/get_products";
 }
