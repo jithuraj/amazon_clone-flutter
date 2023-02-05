@@ -8,4 +8,6 @@ class HomeController extends GetxController {
     Get.off(() => SigninPage());
     signinRepository.setIsSignedIn(value: false);
   }
+
+  
 }
