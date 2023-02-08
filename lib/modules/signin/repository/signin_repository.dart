@@ -10,7 +10,6 @@ class SigninRepository extends GetConnect {
     bool status = false;
     String message = "";
     try {} catch (err) {
-      print('jr error = err');
     }
     FormData formData = FormData({
       Constants.signInUsernameKey: username,

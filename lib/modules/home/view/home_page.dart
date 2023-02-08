@@ -1,4 +1,4 @@
-import 'package:amazon_clone/modules/add_prodcut/view/add_product.dart';
+import 'package:amazon_clone/modules/add_prodcut/view/add_product_page.dart';
 import 'package:amazon_clone/modules/home/controller/home_controller.dart';
 import 'package:amazon_clone/modules/home/widgets/todays_deals.dart';
 import 'package:amazon_clone/modules/product/controller/product_controller.dart';

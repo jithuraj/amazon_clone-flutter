@@ -7,11 +7,12 @@ class AddProductRepository extends GetConnect {
     bool status = false;
     String message = "";
     FormData data = FormData({"name": name, "price": price});
-    Response response = await post(Constants.addProductUrl,data);
+    Response response = await post(Constants.addProductUrl, data);
     if (response.statusCode == 200) {
       status = response.body["status"];
       message = response.body["message"];
     }
     return AddProductResponse(status: status, message: message);
   }
+
 }

@@ -16,7 +16,6 @@ class ProductRepository extends GetConnect {
     Response response = await get(Constants.getProductsUrl, query: data);
     if (response.statusCode == 200) {
       var responseJson = jsonDecode(response.body);
-      print('jr  = ${response.body}');
       status = responseJson["status"] as bool;
       message = responseJson["message"];
       for (var product in responseJson["products"]) {

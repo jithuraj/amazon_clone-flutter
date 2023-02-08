@@ -9,4 +9,5 @@ class Constants {
   // products
   static const String getProductsUrl = "${Config.baseUrl}/get_products";
   static const String addProductUrl =  "${Config.baseUrl}/add_product";
+  static const String getCategoriesUrl =  "${Config.baseUrl}/get_categories";
 }

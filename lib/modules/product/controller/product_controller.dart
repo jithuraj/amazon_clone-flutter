@@ -12,7 +12,6 @@ class ProductController extends GetxController {
         await productRepository.getProducts(category: "daily_deals");
     if (productResponse.status) {
       dailyDeals.value = productResponse.products;
-      print('jr  = ${productResponse.products}');
     }
   }
 }
