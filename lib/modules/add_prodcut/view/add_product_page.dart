@@ -1,7 +1,6 @@
 import 'package:amazon_clone/modules/add_prodcut/controller/add_prodcut_controller.dart';
+import 'package:amazon_clone/modules/product/controller/product_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
 class AddProductPage extends StatefulWidget {
@@ -19,7 +18,8 @@ class _AddProductPageState extends State<AddProductPage> {
   @override
   Widget build(BuildContext context) {
     AddProductController addProductController = Get.put(AddProductController());
-    addProductController.getCategories();
+    ProductController productController = Get.put(ProductController());
+    productController.getCategories();
     return Scaffold(
       body: SafeArea(
         child: Center(
@@ -35,18 +35,18 @@ class _AddProductPageState extends State<AddProductPage> {
                     Obx((() {
                       return PopupMenuButton(
                           initialValue:
-                              addProductController.productCategories.isEmpty
+                              productController.productCategories.isEmpty
                                   ? null
-                                  : addProductController.productCategories[0],
+                                  : productController.productCategories[0],
                           onSelected: (value) {
                             print('jr  = ${value}');
                             setState(() {
                               category = value;
                             });
                           },
-                          icon: Icon(Icons.add),
+                          icon: Icon(Icons.more_vert),
                           itemBuilder: ((context) {
-                            return addProductController.productCategories
+                            return productController.productCategories
                                 .map((e) => PopupMenuItem(
                                       child: Text(e),
                                       value: e,
@@ -72,6 +72,7 @@ class _AddProductPageState extends State<AddProductPage> {
                       addProductController.addProduct(
                           name: nameController.text,
                           price: int.parse(priceController.text),
+                          category:category,
                           onSuccess: () {
                             print('jr onSuccess called');
                             nameController.clear();

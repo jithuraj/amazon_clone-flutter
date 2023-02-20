@@ -8,7 +8,6 @@ import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
 
 class AddProductController extends GetxController {
-  RxList<String> productCategories = <String>[].obs;
 
   AddProductRepository addProductRepository = AddProductRepository();
   GetCategoriesRepository getCategoriesRepository = GetCategoriesRepository();
@@ -16,6 +15,7 @@ class AddProductController extends GetxController {
   addProduct(
       {required String name,
       required int price,
+      required String category,
       required Function() onSuccess}) async {
     AddProductResponse addProductResponse =
         await addProductRepository.addProduct(name: name, price: price);
@@ -31,13 +31,7 @@ class AddProductController extends GetxController {
     }
   }
 
-  getCategories() async {
-    GetCategoriesResponse getCategoriesResponse =
-        await getCategoriesRepository.getCategories();
-    if (getCategoriesResponse.status) {
-      productCategories.value = getCategoriesResponse.categories;
-    }else{
-      
-    }
+  getCategories(){
+    
   }
 }
