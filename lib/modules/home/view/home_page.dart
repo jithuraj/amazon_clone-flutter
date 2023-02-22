@@ -1,4 +1,4 @@
-import 'package:amazon_clone/modules/add_prodcut/view/add_product_page.dart';
+import 'package:amazon_clone/modules/admin/view/admin_page.dart';
 import 'package:amazon_clone/modules/home/controller/home_controller.dart';
 import 'package:amazon_clone/modules/home/widgets/products_list_horizontal.dart';
 import 'package:amazon_clone/modules/product/controller/product_controller.dart';
@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leadingWidth: 100,
-        leading: Center(
+        leading: const Center(
           child: Text(
             'amazon',
             textAlign: TextAlign.left,
@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
             onPressed: () {
               homeController.logout();
             },
-            icon: Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
           ),
         ],
       ),
@@ -40,12 +40,12 @@ class HomePage extends StatelessWidget {
             ProductsListHorizontal(
               categoryName: "Today's Deals",
             ),
-            Spacer(),
+            const Spacer(),
             ElevatedButton(
               onPressed: (() {
-                Get.to(() => AddProductPage());
+                Get.to(() => const AdminPage());
               }),
-              child: Text("add product"),
+              child: const Text("admin page"),
             ),
           ],
         ),
